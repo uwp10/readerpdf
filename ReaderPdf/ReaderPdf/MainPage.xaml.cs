@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Navigation;
 
 namespace ReaderPdf
 {
+    using ViewModel;
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -25,6 +27,8 @@ namespace ReaderPdf
         public MainPage()
         {
             this.InitializeComponent();
+            this.DataContext = new PreviewPdfViewModel();
+            this.NavigationCacheMode = NavigationCacheMode.Enabled;
         }
     }
 }

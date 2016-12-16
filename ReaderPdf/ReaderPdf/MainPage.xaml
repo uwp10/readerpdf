@@ -8,6 +8,37 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+           
+
+            <ListView Grid.Row="0" ItemsSource="{Binding Pages}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="2">
+                            <Border.BorderBrush>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#33000000" Offset="1"/>
+                                    <GradientStop Color="White"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+
+                            <Image Source="{Binding ImagePreview}"/>
+                        </Border>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            <CommandBar Grid.Row="1">
+                <AppBarButton Icon="OpenFile" Command="{Binding OpenFileCommand}"/>
+                <AppBarButton Icon="Save"/>
+            </CommandBar>
+        </Grid>
 
     </Grid>
 </Page>
